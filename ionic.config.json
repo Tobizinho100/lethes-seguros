@@ -1,0 +1,7 @@
+{
+  "name": "lethes-seguros",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
