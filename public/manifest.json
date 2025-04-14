@@ -1,6 +1,6 @@
 {
   "name": "Seguros Lethes",
-  "short_name": "Lethes",
+  "short_name": "Seguros Lethes",
   "icons": [
     {
       "src": "/resources/icon.png",
@@ -14,6 +14,6 @@
     }
   ],
   "start_url": "/",
-  "background_color": "#ffffff",
+  "background_color": "transparent",
   "display": "standalone"
 }
