@@ -1,4 +1,4 @@
-import { IonIcon } from '@ionic/react';
+import { IonButton, IonIcon } from '@ionic/react';
 import {
   logoFacebook,
   logoInstagram,
@@ -7,10 +7,16 @@ import {
   mailOutline,
   callOutline,
 } from 'ionicons/icons';
-
+import { useHistory } from 'react-router-dom';
 import './Footer.css';
 
-const Footer: React.FC = () => {
+  const Footer: React.FC = () => {
+    const history = useHistory();
+
+  const EasterEgg = () => {
+    history.push("./EasterEgg");
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -55,7 +61,7 @@ const Footer: React.FC = () => {
 
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Lethes Seguro. Todos os direitos reservados.</p>
-        <p className="duarte">Feito por Duarte Nuno Pona Menezes.</p>
+        <button className="duarte" onClick={EasterEgg}>Feito por Duarte Nuno Pona Menezes.</button>
       </div>
     </footer>
   );
