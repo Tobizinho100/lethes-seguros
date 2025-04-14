@@ -1,0 +1,113 @@
+/* Perfil.css */
+
+/* Fundo geral e layout */
+ion-content {
+    background-color: #f7f7f7;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Layout geral da página */
+  .profile-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Título da seção */
+  .profile-header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .profile-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .profile-header p {
+    font-size: 16px;
+    color: #888;
+  }
+  
+  /* Estilo do formulário */
+  ion-item {
+    margin-bottom: 20px;
+    --border-radius: 12px;
+  }
+  
+  /* Título dos campos */
+  ion-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Inputs com bordas arredondadas e efeito de foco */
+  ion-input {
+    background-color: #f4f4f9;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  ion-input:focus {
+    border-color: #007aff;
+    box-shadow: 0 0 8px rgba(0, 122, 255, 0.3);
+  }
+  
+  /* Estilo para o campo de foto de perfil */
+  .profile-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .profile-avatar input {
+    display: none;
+  }
+  
+  .profile-avatar img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #007aff;
+    margin-bottom: 10px;
+  }
+  
+  .profile-avatar label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #007aff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
+    .profile-container {
+      padding: 15px;
+    }
+  
+    ion-button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+  

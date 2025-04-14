@@ -1,72 +1,83 @@
-import { IonContent, IonPage } from '@ionic/react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { IonButton, IonContent, IonPage } from '@ionic/react';
+import { useHistory } from 'react-router-dom';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+
 import Video from "../assets/videos/video-inicio.mp4";
+
+import Seguro_de_Vida from "../assets/Illustrações/Post Seguro de Vida.jpg";
+import Seguro_de_Saude from "../assets/Illustrações/Post Carnaval.jpg";
+import Seguro_de_Automovel from "../assets/Illustrações/Post Seguro Fidelidade Auto.jpg";
+import Seguro_Casa from "../assets/Illustrações/Post Seguro Casa Fidelidade.jpg";
+import Seguro_Pets from "../assets/Illustrações/Post Seguro Fidelidade Pets.jpg";
+
 import './Home.css';
 
 const Home: React.FC = () => {
+  const history = useHistory();
+
+  const navigateToProfile = () => {
+    history.push("/perfil");
+  };
+
   return (
     <IonPage>
       <Header />
       <IonContent fullscreen>
-        <div className="relative">
+        <div className="relative video-container">
           <video
-            className="w-full h-full object-cover"
+            className="video-element"
             autoPlay
             loop
             muted
           >
             <source src={Video} type="video/mp4" />
-            Seu navegador não suporta o vídeo.
+            O seu navegador não suporta vídeos.
           </video>
 
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-            <h2 className="text-4xl font-bold mb-4">Proteja o que importa</h2>
-            <p className="text-lg">
-              A sua segurança é nossa prioridade. Conheça os nossos seguros e sinta-se protegido a qualquer momento.
-            </p>
-          </div>
-        </div>
-
-        <div className="p-4 text-center mt-8">
-          <h3 className="text-2xl font-semibold mb-4">Seguros Personalizados</h3>
-          <p className="text-lg mb-4">
-            Escolha o seguro que se adapta à sua vida, com coberturas flexíveis e assistência completa.
+          <div className="video-overlay">
+          <h2 className="video-title">Proteja o que importa</h2>
+          <p className="video-subtitle">
+            A sua segurança é a nossa prioridade.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { titulo: "Seguro de Vida", texto: "Proteja o seu futuro e o dos seus entes queridos com planos de seguro de vida flexíveis." },
-              { titulo: "Seguro de Saúde", texto: "Cuidamos da sua saúde com uma ampla gama de planos que cobrem tratamentos médicos e hospitalares." },
-              { titulo: "Seguro de Casa", texto: "Proteja a sua casa e os seus bens com um seguro contra incêndios, danos naturais e roubo." },
-              { titulo: "Seguro de Carro", texto: "A proteção que o seu carro precisa. Coberturas para danos próprios, terceiros e acidentes." },
-            ].map((seguro, index) => (
-              <div key={index} className="bg-white p-4 shadow-lg rounded-md">
-                <h4 className="text-xl font-semibold mb-2">{seguro.titulo}</h4>
-                <p className="text-md">{seguro.texto}</p>
-              </div>
-            ))}
-          </div>
+          <IonButton expand="block" color="primary" onClick={navigateToProfile}>
+            Fazer simulação
+          </IonButton>
         </div>
+      </div>
+      <section className="seguros-grid">
+  <div className="seguro-card">
+    <img src={Seguro_de_Vida} alt="Seguro de Vida" />
+    <h4>Seguro de Vida</h4>
+    <p>Proteção financeira para quem mais importa. Tranquilidade em todas as fases da vida.</p>
+  </div>
 
-        <div className="p-4 bg-gray-100 mt-8">
-          <h3 className="text-2xl font-semibold text-center mb-4">O que nossos clientes dizem</h3>
-          <div className="flex flex-wrap justify-center gap-8">
-            <div className="bg-white p-6 shadow-lg rounded-md max-w-xs">
-              <p className="text-md mb-4">
-                "A Fidelidade Lethes me ajudou a escolher o seguro perfeito para minha família. Eles são rápidos e confiáveis!"
-              </p>
-              <p className="font-semibold">Carlos Silva</p>
-              <p className="text-sm text-gray-600">Cliente satisfeito</p>
-            </div>
-            <div className="bg-white p-6 shadow-lg rounded-md max-w-xs">
-              <p className="text-md mb-4">
-                "O seguro de saúde foi a melhor escolha que fiz. A equipe me ajudou a escolher a cobertura ideal."
-              </p>
-              <p className="font-semibold">Ana Costa</p>
-              <p className="text-sm text-gray-600">Cliente satisfeita</p>
-            </div>
-          </div>
-        </div>
+  <div className="seguro-card">
+    <img src={Seguro_de_Automovel} alt="Seguro Automóvel" />
+    <h4>Seguro Automóvel</h4>
+    <p>Conduza com confiança com uma cobertura adaptada ao seu veículo e estilo de vida.</p>
+  </div>
+
+  <div className="seguro-card">
+    <img src={Seguro_de_Saude} alt="Seguro de Saúde" />
+    <h4>Seguro de Saúde</h4>
+    <p>Acesso facilitado aos melhores cuidados de saúde para si e para a sua família.</p>
+  </div>
+
+  <div className="seguro-card">
+    <img src={Seguro_Pets} alt="Seguro de Saúde" />
+    <h4>Seguro de Saúde</h4>
+    <p>Acesso facilitado aos melhores cuidados de saúde para si e para a sua família.</p>
+  </div>
+
+  <div className="seguro-card">
+    <img src={Seguro_Casa} alt="Seguro Habitação" />
+    <h4>Seguro Habitação</h4>
+    <p>Proteja a sua casa contra imprevistos com coberturas completas e flexíveis.</p>
+  </div>
+</section>
+
+        
 
         <Footer />
       </IonContent>

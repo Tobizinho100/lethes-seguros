@@ -1,28 +1,113 @@
-/* Certifique-se de que o vídeo ocupa toda a tela */
-.relative {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.video-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.video-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.video-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* RESPONSIVO: no telemóvel o vídeo ocupa só 40% da altura */
+@media (max-width: 768px) {
+  .video-container {
+    height: 40vh;
   }
-  
-  /* Centralizar o texto sobre o vídeo */
-  .absolute {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+
+  .video-overlay {
+    top: 70%;
     transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
+    padding: 0.5rem;
   }
-  
-  .text-white {
-    color: white;
+
+  .video-title {
+    font-size: 1.5rem;
   }
-  
-  /* Estilos adicionais */
-  p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto;
+
+  .video-subtitle {
+    font-size: 0.9rem;
   }
-  
+}
+
+.seguros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.seguro-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.seguro-card:hover {
+  transform: translateY(-4px);
+}
+
+.seguro-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.seguro-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  color: #e30613;
+}
+
+.seguro-card p {
+  font-size: 0.95rem;
+  margin: 0.5rem 1rem 1rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .seguros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
