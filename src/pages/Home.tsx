@@ -16,8 +16,8 @@ import './Home.css';
 const Home: React.FC = () => {
   const history = useHistory();
 
-  const navigateToProfile = () => {
-    history.push("/perfil");
+  const Simulador = () => {
+    history.push("./Simulador");
   };
 
   return (
@@ -40,8 +40,8 @@ const Home: React.FC = () => {
           <p className="video-subtitle">
             A sua segurança é a nossa prioridade.
           </p>
-          <IonButton expand="block" color="primary" onClick={navigateToProfile}>
-            Fazer simulação
+          <IonButton className="btn-simular" fill="solid" onClick={Simulador}>
+            Simular
           </IonButton>
         </div>
       </div>

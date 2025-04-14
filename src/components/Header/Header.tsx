@@ -7,20 +7,22 @@ import {
   IonImg,
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import Logo from '../../assets/Logos/Logo-Lethes.png'; // usa o teu logo aqui
+import Logo from '../../assets/Logos/Logo-Lethes.png';
+
 import './Header.css';
 
 const Header: React.FC = () => {
   const history = useHistory();
+
+  const Simulador = () => {
+    history.push("./Simulador");
+  };
 
   return (
     <IonHeader>
       <IonToolbar className="navbar">
         <div className="navbar-left">
           <IonImg src={Logo} alt="Logo Lethes" className="navbar-logo" />
-        </div>
-
-        <div className="navbar-center">
           <IonTitle className="navbar-title">Seguros Lethes</IonTitle>
         </div>
 
@@ -28,6 +30,7 @@ const Header: React.FC = () => {
           <IonButtons>
             <IonButton onClick={() => history.push('/')}>Início</IonButton>
             <IonButton onClick={() => history.push('/produtos')}>Seguros</IonButton>
+            <IonButton onClick={() => history.push('/simulador')}>Simulação</IonButton>
             <IonButton onClick={() => history.push('/contactos')}>Contactos</IonButton>
             <IonButton onClick={() => history.push('/login')}>Login</IonButton>
           </IonButtons>

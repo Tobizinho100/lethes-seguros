@@ -4,6 +4,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Login from './pages/Login/Login';
 import Perfil from './pages/Perfil/Perfil';
+import Simulador from './pages/Simulador/Simulador';
+import SimuladorTipo from './pages/SimuladorTipo/SimuladorTipo';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,6 +45,10 @@ const App: React.FC = () => (
         <Route exact path="/home">
           <Home />
         </Route>
+        <Route exact path="/simulador">
+          <Simulador />
+        </Route>
+        <Route path="/simular/:tipo" component={SimuladorTipo} exact />
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
