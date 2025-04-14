@@ -98,23 +98,6 @@ ion-content {
     font-size: 16px;
   }
   
-  /* Botão para salvar alterações */
-  ion-button {
-    width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    background-color: #007aff;
-    color: white;
-    border-radius: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  ion-button:hover {
-    background-color: #005bb5;
-  }
   
   /* Estilos responsivos */
   @media (max-width: 600px) {
