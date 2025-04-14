@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import Perfil from './pages/Perfil/Perfil';
 import Simulador from './pages/Simulador/Simulador';
 import SimuladorTipo from './pages/SimuladorTipo/SimuladorTipo';
+import EasterEgg from './pages/EasterEgg/EasterEgg';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -49,6 +50,9 @@ const App: React.FC = () => (
           <Simulador />
         </Route>
         <Route path="/simular/:tipo" component={SimuladorTipo} exact />
+        <Route exact path="/EasterEgg">
+          <EasterEgg />
+        </Route>
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
