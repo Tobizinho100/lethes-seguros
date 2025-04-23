@@ -65,6 +65,7 @@ import {
             ))}
           </div>
         </IonContent>
+        <Footer />
       </IonPage>
     );
   };

@@ -1,102 +1,118 @@
 import {
-    IonPage,
-    IonContent,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardContent,
-    IonGrid,
-    IonRow,
-    IonCol,
-  } from '@ionic/react';
-  import Header from '../../components/Header/Header';
-  import './EasterEgg.css';
-  
-  const EasterEgg: React.FC = () => {
-    return (
-      <IonPage>
-        <Header />
-        <IonContent className="ion-padding competencias-content">
-          <h2 className="competencias-title">Competências Desenvolvidas</h2>
-          <p className="competencias-subtitle">
-            Durante o desenvolvimento desta aplicação, recorri a várias ferramentas e tecnologias que reforçaram as minhas competências em design, programação e estruturação de projetos.
-          </p>
-  
-          <IonGrid>
-            <IonRow>
-              <IonCol size="12" sizeMd="6">
-                <IonCard className="competencias-card">
-                  <IonCardHeader>
-                    <IonCardTitle>💻 Programação</IonCardTitle>
-                  </IonCardHeader>
-                  <IonCardContent>
-                    <ul>
-                      <li>React com Ionic Framework</li>
-                      <li>TypeScript</li>
-                      <li>Estruturação de componentes reutilizáveis</li>
-                      <li>Routing com React Router</li>
-                    </ul>
-                  </IonCardContent>
-                </IonCard>
-              </IonCol>
-  
-              <IonCol size="12" sizeMd="6">
-                <IonCard className="competencias-card">
-                  <IonCardHeader>
-                    <IonCardTitle>🎨 Design & UX</IonCardTitle>
-                  </IonCardHeader>
-                  <IonCardContent>
-                    <ul>
-                      <li>Criação de interfaces responsivas</li>
-                      <li>Utilização do Figma/Adobe Illustrator</li>
-                      <li>Gestão de estilos com CSS modular</li>
-                      <li>Identidade visual da marca</li>
-                    </ul>
-                  </IonCardContent>
-                </IonCard>
-              </IonCol>
-            </IonRow>
-  
-            <IonRow>
-              <IonCol size="12" sizeMd="6">
-                <IonCard className="competencias-card">
-                  <IonCardHeader>
-                    <IonCardTitle>🧠 Organização</IonCardTitle>
-                  </IonCardHeader>
-                  <IonCardContent>
-                    <ul>
-                      <li>Estrutura de diretórios lógica</li>
-                      <li>Separação clara entre lógica e UI</li>
-                      <li>Utilização de boas práticas de código</li>
-                    </ul>
-                  </IonCardContent>
-                </IonCard>
-              </IonCol>
-  
-              <IonCol size="12" sizeMd="6">
-                <IonCard className="competencias-card">
-                  <IonCardHeader>
-                    <IonCardTitle>📲 Funcionalidades Mobile</IonCardTitle>
-                  </IonCardHeader>
-                  <IonCardContent>
-                    <ul>
-                      <li>Design adaptado a ecrãs pequenos</li>
-                      <li>Swiper de navegação para mobile</li>
-                      <li>Botões touch-friendly</li>
-                      <li>Performance otimizada</li>
-                    </ul>
-                  </IonCardContent>
-                </IonCard>
-              </IonCol>
-            </IonRow>
-          </IonGrid>
-        </IonContent>
-      </IonPage>
-    );
-  };
-  
-  export default EasterEgg;
-  
+  IonPage,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
+} from '@ionic/react';
+import Header from '../../components/Header/Header';
+import MeuFooter from '../../components/MeuFooter/MeuFooter';
+import './EasterEgg.css';
+
+// Importa os logos
+import reactLogo from '../../assets/Logos/React.webp';
+import viteLogo from '../../assets/Logos/Vite.svg';
+import tsLogo from '../../assets/Logos/Typescript.png';
+import ionicLogo from '../../assets/Logos/Ionic.png';
+import tailwindLogo from '../../assets/Logos/Tailwind.png';
+import cssLogo from '../../assets/Logos/CSS.png';
+import illustratorLogo from '../../assets/Logos/Illustrator.png';
+import blenderLogo from '../../assets/Logos/Blender.png';
+
+const EasterEgg: React.FC = () => {
+  return (
+    <IonPage>
+      <Header />
+      <IonContent className="ion-padding competencias-content">
+        <h2 className="competencias-title">Tecnologias Utilizadas</h2>
+        <p className="competencias-subtitle">
+          Estas foram as principais linguagens e ferramentas utilizadas no desenvolvimento da aplicação:
+        </p>
+
+        <IonGrid>
+          <IonRow>
+            <IonCol size="12" sizeMd="6" sizeLg="4">
+              <IonCard className="competencias-card">
+                <IonCardHeader>
+                  <IonCardTitle>
+                    <img src={reactLogo} alt="React" className="tech-logo" />
+                    React & Vite
+                    <img src={viteLogo} alt="Vite" className="tech-logo" />
+                  </IonCardTitle>
+                </IonCardHeader>
+                <IonCardContent>
+                  Biblioteca JavaScript para construir interfaces.
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+
+            <IonCol size="12" sizeMd="6" sizeLg="4">
+              <IonCard className="competencias-card">
+                <IonCardHeader>
+                  <IonCardTitle>
+                    <img src={tsLogo} alt="TypeScript" className="tech-logo" />
+                    TypeScript
+                  </IonCardTitle>
+                </IonCardHeader>
+                <IonCardContent>
+                  Superset do JavaScript com tipagem estática.
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+
+            <IonCol size="12" sizeMd="6" sizeLg="4">
+              <IonCard className="competencias-card">
+                <IonCardHeader>
+                  <IonCardTitle>
+                    <img src={ionicLogo} alt="Ionic" className="tech-logo" />
+                    Ionic Framework
+                  </IonCardTitle>
+                </IonCardHeader>
+                <IonCardContent>
+                  Framework para aplicações móveis híbridas.
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+
+            <IonCol size="12" sizeMd="6" sizeLg="4">
+              <IonCard className="competencias-card">
+                <IonCardHeader>
+                  <IonCardTitle>
+                    <img src={cssLogo} alt="CSS" className="tech-logo" />
+                    CSS & Tailwind
+                    <img src={tailwindLogo} alt="Tailwind" className="tech-logo" />
+                  </IonCardTitle>
+                </IonCardHeader>
+                <IonCardContent>
+                  Estilização personalizada com CSS modular.
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+
+            <IonCol size="12" sizeMd="6" sizeLg="4">
+              <IonCard className="competencias-card">
+                <IonCardHeader>
+                  <IonCardTitle>
+                    <img src={illustratorLogo} alt="Illustrator" className="tech-logo" />
+                    Illustrator & Blender
+                    <img src={blenderLogo} alt="Blender" className="tech-logo" />
+                  </IonCardTitle>
+                </IonCardHeader>
+                <IonCardContent>
+                  Ferramentas de design para criação da identidade visual.
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonContent>
+      <MeuFooter />
+    </IonPage>
+  );
+};
+
+export default EasterEgg;

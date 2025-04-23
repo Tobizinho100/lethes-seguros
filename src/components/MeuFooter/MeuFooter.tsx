@@ -6,15 +6,16 @@ import {
   locationOutline,
   mailOutline,
   callOutline,
+  logoGithub,
 } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
-import './Footer.css';
+import './MeuFooter.css';
 
-  const Footer: React.FC = () => {
+  const MeuFooter: React.FC = () => {
     const history = useHistory();
 
-  const EasterEgg = () => {
-    history.push("./EasterEgg");
+  const Home = () => {
+    history.push("./Home");
   };
 
   return (
@@ -22,33 +23,40 @@ import './Footer.css';
       <div className="footer-content">
         <div className="footer-section">
           <h4>Contactos</h4>
-          <p><IonIcon icon={mailOutline} /> lethes.seguros@gmail.com</p>
-          <p><IonIcon icon={callOutline} /> 258 909 727</p>
+          <p><IonIcon icon={mailOutline} /> duartedx10@gmail.com</p>
+          <p><IonIcon icon={callOutline} /> 910 832 292</p>
         </div>
 
         <div className="footer-section">
         <h4>Redes Sociais</h4>
           <div className="social-icons">
             <a
-              href="https://www.facebook.com/letheslojafidelidade"
+              href="https://www.facebook.com/profile.php?id=61574426734061"
               target="_blank"
               rel="noopener noreferrer"
             >
               <IonIcon icon={logoFacebook} />
             </a>
             <a
-              href="https://www.instagram.com/fidelidadepontedelimacentro/"
+              href="https://www.instagram.com/chronix.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
               <IonIcon icon={logoInstagram} />
             </a>
             <a
-              href="https://www.tiktok.com/@fidelidadepontedelimacen"
+              href="https://www.tiktok.com/@chronix.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
               <IonIcon icon={logoTiktok} />
+            </a>
+            <a
+              href="https://github.com/Tobizinho100/lethes-seguros"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IonIcon icon={logoGithub} />
             </a>
           </div>
         </div>
@@ -61,10 +69,10 @@ import './Footer.css';
 
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Lethes Seguro. Todos os direitos reservados.</p>
-        <button className="duarte" onClick={EasterEgg}>Feito por Duarte Nuno Pona Menezes.</button>
+        <button className="duarte" onClick={Home}>Feito por Duarte Nuno Pona Menezes.</button>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default MeuFooter;

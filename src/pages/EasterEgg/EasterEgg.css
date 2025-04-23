@@ -46,3 +46,10 @@
     margin-bottom: 0.5rem;
   }
   
+  .tech-logo {
+    width: auto;
+    height: 24px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  
