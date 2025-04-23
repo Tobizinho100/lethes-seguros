@@ -28,6 +28,7 @@
 }
 
 .video-title {
+  color: white;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -84,6 +85,8 @@
 }
 
 .seguro-card {
+  padding-top: 10px;
+  position: relative;
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -100,20 +103,34 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  transition: filter 0.3s ease;
 }
 
-.seguro-card h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 0.75rem;
-  color: #e30613;
+.seguro-card:hover img {
+  filter: brightness(40%);
 }
 
-.seguro-card p {
-  font-size: 0.95rem;
-  margin: 0.5rem 1rem 1rem;
-  color: #333;
+.seguro-card .hover-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e30613;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
+
+.seguro-card:hover .hover-button {
+  opacity: 1;
+}
+
 
 @media (max-width: 768px) {
   .seguros-grid {
@@ -121,3 +138,22 @@
   }
 }
 
+@media (max-width: 768px) {
+  .seguro-card {
+    max-width: 220px;
+    border-radius: 10px;
+  }
+
+  .seguro-card h4 {
+    font-size: 1rem;
+  }
+
+  .seguro-card p {
+    font-size: 0.85rem;
+    margin: 0.5rem 0.75rem 1rem;
+  }
+
+  .seguro-card img {
+    aspect-ratio: 4 / 3;
+  }
+}

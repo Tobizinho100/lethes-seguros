@@ -3,9 +3,10 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Login from './pages/Login/Login';
-import Perfil from './pages/Perfil/Perfil';
+import Contactos from './pages/Contactos/Contactos';
 import Simulador from './pages/Simulador/Simulador';
 import SimuladorTipo from './pages/SimuladorTipo/SimuladorTipo';
+import Seguros from './pages/Seguros/Seguros';
 import EasterEgg from './pages/EasterEgg/EasterEgg';
 
 /* Core CSS required for Ionic components to work properly */
@@ -46,8 +47,17 @@ const App: React.FC = () => (
         <Route exact path="/home">
           <Home />
         </Route>
+        <Route exact path="/seguros">
+          <Seguros />
+        </Route>
         <Route exact path="/simulador">
           <Simulador />
+        </Route>
+        <Route exact path="/contactos">
+          <Contactos />
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
         <Route path="/simular/:tipo" component={SimuladorTipo} exact />
         <Route exact path="/EasterEgg">
@@ -57,7 +67,7 @@ const App: React.FC = () => (
           <Redirect to="/home" />
         </Route>
       </IonRouterOutlet>
-    </IonReactRouter>
+    </IonReactRouter> 
   </IonApp>
 );
 
