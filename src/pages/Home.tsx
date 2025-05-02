@@ -7,7 +7,7 @@ import { useCallback } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
-import video from '../../assets/Videos/video-inicio.mp4';
+import video from '../assets/Videos/video-inicio.mp4';
 
 import Seguro_Vida from '../assets/Illustrações/Post Seguro de Vida.jpg';
 import Seguro_Saude from '../assets/Illustrações/Post Carnaval.jpg';
