@@ -7,7 +7,7 @@ import { useCallback } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
-import video from '../assets/Videos/video-inicio.mp4';
+import VideoInicial from '../assets/video/blender.mp4';
 
 import Seguro_Vida from '../assets/Illustrações/Post Seguro de Vida.jpg';
 import Seguro_Saude from '../assets/Illustrações/Post Carnaval.jpg';
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <div className="relative video-container">
           <video className="video-element" autoPlay loop muted playsInline>
-            <source src={video} type="video/mp4" />
+            <source src={VideoInicial} type="video/mp4" />
             O seu navegador não suporta vídeos.
           </video>
 
