@@ -20,6 +20,7 @@
   height: 40px;
   width: auto;
   margin-bottom: 0.3rem;
+  cursor: pointer;
 }
 
 .navbar-title {
@@ -52,4 +53,20 @@
     width: 100%;
     text-align: center;
   }
+}
+
+.navbar-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Opcional: esconde barra de scroll em navegadores modernos */
+.navbar-scroll::-webkit-scrollbar {
+  display: none;
+}
+.navbar-scroll {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
 }

@@ -37,6 +37,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Registar from './pages/Registar/Registar';
 
 setupIonicReact();
 
@@ -58,6 +59,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/login">
           <Login />
+        </Route>
+        <Route exact path="/registar">
+          <Registar />
         </Route>
         <Route path="/simular/:tipo" component={SimuladorTipo} exact />
         <Route exact path="/EasterEgg">
