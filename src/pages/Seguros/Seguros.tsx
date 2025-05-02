@@ -2,18 +2,17 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './Seguros.css';
-import { IonPage } from '@ionic/react';
+import { IonPage, IonContent } from '@ionic/react'; // importa IonContent
 
-import Fidelidade_Casa from "../../assets/Illustrações/Post Seguro Casa Fidelidade.jpg"
-import Fidelidade_Pets from "../../assets/Illustrações/Post Seguro Fidelidade Pets.jpg"
-import Fidelidade_Auto from "../../assets/Illustrações/Post Seguro Fidelidade Auto.jpg"
-import Fidelidade_Viagem from "../../assets/Illustrações/Post Seguro Viagem Fidelidade.jpg"
-import Protecao_Vital from "../../assets/Illustrações/Post Proteção Vital da Familia.jpg"
-import Seguro_Vida from "../../assets/Illustrações/Post Seguro de Vida.jpg"
-import Seguro_Saude from "../../assets/Illustrações/Post Carnaval.jpg"
-import Poupanca_Fidelidade from "../../assets/Illustrações/Post Seguro Poupança Fidelidade.jpg"
-import Protecao_Vital_65 from "../../assets/Illustrações/Post Proteção Vital 65+.jpg"
-
+import Fidelidade_Casa from "../../assets/Illustrações/Post Seguro Casa Fidelidade.jpg";
+import Fidelidade_Pets from "../../assets/Illustrações/Post Seguro Fidelidade Pets.jpg";
+import Fidelidade_Auto from "../../assets/Illustrações/Post Seguro Fidelidade Auto.jpg";
+import Fidelidade_Viagem from "../../assets/Illustrações/Post Seguro Viagem Fidelidade.jpg";
+import Protecao_Vital from "../../assets/Illustrações/Post Proteção Vital da Familia.jpg";
+import Seguro_Vida from "../../assets/Illustrações/Post Seguro de Vida.jpg";
+import Seguro_Saude from "../../assets/Illustrações/Post Carnaval.jpg";
+import Poupanca_Fidelidade from "../../assets/Illustrações/Post Seguro Poupança Fidelidade.jpg";
+import Protecao_Vital_65 from "../../assets/Illustrações/Post Proteção Vital 65+.jpg";
 
 const segurosParticulares = [
   { titulo: 'Seguro Casa Fidelidade', imagem: Fidelidade_Casa },
@@ -33,7 +32,7 @@ const Seguros: React.FC = () => {
   return (
     <IonPage>
       <Header />
-      <div className="pagina">
+      <IonContent className="pagina"> {/* <-- Envolve o conteúdo em IonContent */}
         <h1 className="titulo">Seguros Particulares Fidelidade</h1>
         <div className="simulador-grid">
           {segurosParticulares.map((seguro, i) => (
@@ -48,7 +47,7 @@ const Seguros: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+      </IonContent>
       <Footer />
     </IonPage>
   );

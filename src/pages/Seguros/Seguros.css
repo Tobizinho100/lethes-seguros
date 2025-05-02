@@ -1,8 +1,10 @@
 .pagina {
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-    min-height: 100vh;
-  }
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
   
   .titulo {
     font-size: 2rem;
@@ -88,9 +90,6 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
     }
-  
-    .simulador-card h3 {
-      font-size: 1rem;
-    }
+
   }
   

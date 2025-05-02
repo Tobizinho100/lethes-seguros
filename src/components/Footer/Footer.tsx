@@ -7,14 +7,14 @@ import {
   mailOutline,
   callOutline,
 } from 'ionicons/icons';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';  // Atualizado para v5
 import './Footer.css';
 
-  const Footer: React.FC = () => {
-    const history = useHistory();
+const Footer: React.FC = () => {
+  const history = useHistory();  // Atualizado para v5
 
   const EasterEgg = () => {
-    history.push("./EasterEgg");
+    history.push("/EasterEgg");  // Atualizado para v5
   };
 
   return (
@@ -22,12 +22,20 @@ import './Footer.css';
       <div className="footer-content">
         <div className="footer-section">
           <h4>Contactos</h4>
-          <p><IonIcon icon={mailOutline} /> lethes.seguros@gmail.com</p>
-          <p><IonIcon icon={callOutline} /> 258 909 727</p>
+          <p>
+            <a href="mailto:lethes.seguros@gmail.com" className="footer-link">
+              <IonIcon icon={mailOutline} /> lethes.seguros@gmail.com
+            </a>
+          </p>
+          <p>
+            <a href="tel:258909727" className="footer-link">
+              <IonIcon icon={callOutline} /> 258 909 727
+            </a>
+          </p>
         </div>
 
         <div className="footer-section">
-        <h4>Redes Sociais</h4>
+          <h4>Redes Sociais</h4>
           <div className="social-icons">
             <a
               href="https://www.facebook.com/letheslojafidelidade"
@@ -55,7 +63,9 @@ import './Footer.css';
 
         <div className="footer-section">
           <h4>Localização</h4>
-          <p><IonIcon icon={locationOutline} />  Rua Agostinho José Taveira, 52 , 4990-072 Ponte de Lima</p>
+          <p onClick={() => window.open("https://maps.app.goo.gl/1JBVeinbwrUKaQz18", "_blank")}>
+            <IonIcon icon={locationOutline} /> Rua Agostinho José Taveira, 52 , 4990-072 Ponte de Lima
+          </p>
         </div>
       </div>
 

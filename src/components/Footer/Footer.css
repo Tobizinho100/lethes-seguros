@@ -17,6 +17,17 @@
     color: #fff;
     margin-bottom: 0.75rem;
   }
+
+  .footer-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
   
   .footer-section p {
     margin: 0.4rem 0;
@@ -49,6 +60,14 @@
     font-size: 0.85rem;
     color: #1b1a1a;
     background-color: #1b1a1a;
+  }
+
+  .footer-section p {
+    cursor: pointer;
+  }
+  
+  .footer-section p:hover {
+    text-decoration: underline;
   }
   
   @media (max-width: 768px) {

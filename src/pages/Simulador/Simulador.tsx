@@ -37,36 +37,41 @@ import {
   
     return (
       <IonPage>
-        <Header />
-        <IonContent className="ion-padding simulador-content">
-          <h2 className="simulador-title">Simule o seu Seguro</h2>
-          <p className="simulador-subtitle">
-            Escolha o tipo de seguro que pretende simular.
-          </p>
-  
-          <div className="simulador-grid">
-            {seguros.map((seguro) => (
-              <IonCard key={seguro.tipo} className="simulador-card">
-                <div className="card-image-wrapper">
-                  <img src={seguro.img} alt={seguro.nome} />
-                  <div className="card-overlay">
-                    <h3>{seguro.nome}</h3>
-                    <IonButton
-                      color="light"
-                      fill="outline"
-                      size="small"
-                      onClick={() => handleSimular(seguro.tipo)}
-                    >
-                      Simular
-                    </IonButton>
-                  </div>
-                </div>
-              </IonCard>
-            ))}
-          </div>
-        </IonContent>
-        <Footer />
-      </IonPage>
+  <Header />
+  <div className="simulador-page">
+    <main className="simulador-content">
+      <h2 className="simulador-title">Simule o seu Seguro</h2>
+      <p className="simulador-subtitle">
+        Escolha o tipo de seguro que pretende simular.
+      </p>
+
+      <div className="simulador-grid">
+        {seguros.map((seguro) => (
+          <IonCard key={seguro.tipo} className="simulador-card">
+            <div className="card-image-wrapper">
+              <img src={seguro.img} alt={seguro.nome} />
+              <div className="card-overlay">
+                <h3>{seguro.nome}</h3>
+                <IonButton
+                  color="light"
+                  fill="outline"
+                  size="small"
+                  onClick={() => handleSimular(seguro.tipo)}
+                >
+                  Simular
+                </IonButton>
+              </div>
+            </div>
+          </IonCard>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </div>
+</IonPage>
+
+
+
     );
   };
   
