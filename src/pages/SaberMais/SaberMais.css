@@ -1,0 +1,39 @@
+.sabermais-conteudo {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .sabermais-conteudo h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .seguro-imagem {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    margin: 1rem auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sabermais-conteudo p {
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .btn-simular {
+    --background: #e30613;
+    --color: white;
+    --border-radius: 8px;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-simular:hover {
+    --background: #bf0510;
+  }
+  

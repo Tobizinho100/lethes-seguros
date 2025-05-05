@@ -26,7 +26,7 @@ const Header: React.FC = () => {
               window.open("https://linktr.ee/fidelidadepontedelimacentro", "_blank")
             }
           />
-          <IonTitle className="navbar-title">Seguros Lethes</IonTitle>
+          <IonTitle className="navbar-title" onClick={() => history.push('/')}>Seguros Lethes</IonTitle>
         </div>
 
         <div className="navbar-right">

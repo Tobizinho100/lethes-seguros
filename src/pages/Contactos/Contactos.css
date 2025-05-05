@@ -1,106 +1,124 @@
-.contactos-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contactos-container h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #e30613; /* Cor de destaque */
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 1rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    resize: none; /* Impede redimensionamento da textarea */
-  }
-  
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: #e30613;
-    box-shadow: 0 0 8px rgba(227, 6, 19, 0.3);
-  }
-  
-  .contact-form button {
-    padding: 1rem;
-    background-color: #e30613;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .contact-form button:hover {
-    background-color: #c40411;
-  }
-  
-  .contact-form input::placeholder,
-  .contact-form textarea::placeholder {
-    color: #888;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1rem;
-  }
-  
-  .contact-form input[type="hidden"] {
-    display: none;
-  }
+.contactos-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+}
 
-  /* Estilo para a seção das pessoas */
+
+.contactos-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contactos-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2rem 3rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+
+.contactos-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e30613;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e30613;
+  box-shadow: 0 0 8px rgba(227, 6, 19, 0.3);
+}
+
+.contact-form button {
+  padding: 1rem;
+  background-color: #e30613;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #c40411;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+}
+
+.contact-form input[type="hidden"] {
+  display: none;
+}
+
+/* Estilo para a seção das pessoas */
 .people-section {
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  
-  .people-section h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .people-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .person-card {
-    text-align: center;
-  }
-  
-  .profile-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .person-info h3 {
-    font-size: 18px;
-    margin: 5px 0;
-  }
-  
-  .person-info p {
-    font-size: 14px;
-    color: gray;
-  }
-  
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.people-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.people-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.person-card {
+  text-align: center;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.person-info h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.person-info p {
+  font-size: 14px;
+  color: gray;
+}

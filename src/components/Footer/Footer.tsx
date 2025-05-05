@@ -7,14 +7,14 @@ import {
   mailOutline,
   callOutline,
 } from 'ionicons/icons';
-import { useHistory } from 'react-router-dom';  // Atualizado para v5
+import { useHistory } from 'react-router-dom';
 import './Footer.css';
 
 const Footer: React.FC = () => {
-  const history = useHistory();  // Atualizado para v5
+  const history = useHistory();
 
   const EasterEgg = () => {
-    history.push("/EasterEgg");  // Atualizado para v5
+    history.push("/EasterEgg");
   };
 
   return (
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Lethes Seguro. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Seguros Lethes. Todos os direitos reservados.</p>
         <button className="duarte" onClick={EasterEgg}>Feito por Duarte Nuno Pona Menezes.</button>
       </div>
     </footer>

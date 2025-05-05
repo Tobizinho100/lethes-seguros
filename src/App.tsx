@@ -8,6 +8,7 @@ import Simulador from './pages/Simulador/Simulador';
 import SimuladorTipo from './pages/SimuladorTipo/SimuladorTipo';
 import Seguros from './pages/Seguros/Seguros';
 import EasterEgg from './pages/EasterEgg/EasterEgg';
+import SaberMais from './pages/SaberMais/SaberMais';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -53,6 +54,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/simulador">
           <Simulador />
+        </Route>
+        <Route exact path="/sabermais">
+          <SaberMais />
         </Route>
         <Route exact path="/contactos">
           <Contactos />

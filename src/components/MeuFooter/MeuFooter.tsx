@@ -23,8 +23,16 @@ import './MeuFooter.css';
       <div className="footer-content">
         <div className="footer-section">
           <h4>Contactos</h4>
-          <p><IonIcon icon={mailOutline} /> duartedx10@gmail.com</p>
-          <p><IonIcon icon={callOutline} /> 910 832 292</p>
+          <p>
+            <a href="mailto:duartedx10@gmail.com" className="footer-link">
+              <IonIcon icon={mailOutline} /> duartedx10@gmail.com
+            </a>
+          </p>
+          <p>
+            <a href="tel:910832292" className="footer-link">
+              <IonIcon icon={callOutline} /> 910 832 292
+            </a>
+          </p>
         </div>
 
         <div className="footer-section">

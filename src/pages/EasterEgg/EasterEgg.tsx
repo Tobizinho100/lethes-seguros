@@ -110,7 +110,7 @@ const EasterEgg: React.FC = () => {
           </IonRow>
         </IonGrid>
       </IonContent>
-      <MeuFooter />
+    <MeuFooter />
     </IonPage>
   );
 };
