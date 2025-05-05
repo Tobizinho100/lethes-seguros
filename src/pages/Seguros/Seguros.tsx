@@ -2,7 +2,8 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './Seguros.css';
-import { IonPage, IonContent } from '@ionic/react'; // importa IonContent
+import { IonPage, IonContent } from '@ionic/react';
+import { useHistory } from 'react-router-dom';
 
 import Fidelidade_Casa from "../../assets/Illustrações/Post Seguro Casa Fidelidade.jpg";
 import Fidelidade_Pets from "../../assets/Illustrações/Post Seguro Fidelidade Pets.jpg";
@@ -27,25 +28,34 @@ const segurosParticulares = [
 ];
 
 const Seguros: React.FC = () => {
-  const simular = (titulo: string) => alert(`Simular "${titulo}"`);
+  const history = useHistory();
+
+  const SaberMais = (seguro: { titulo: string, imagem: string }) => {
+    history.push('/sabermais', { state: seguro });
+  };
 
   return (
     <IonPage>
       <Header />
-      <IonContent className="pagina"> {/* <-- Envolve o conteúdo em IonContent */}
-        <h1 className="titulo">Seguros Particulares Fidelidade</h1>
-        <div className="simulador-grid">
-          {segurosParticulares.map((seguro, i) => (
-            <div className="simulador-card" key={i}>
-              <div className="card-img-container">
-                <img src={seguro.imagem} alt={seguro.titulo} className="imagem" />
-                <button className="hover-button" onClick={() => simular(seguro.titulo)}>
-                  Simular
-                </button>
+      <IonContent className="pagina">
+        <div className="conteudo">
+          <h1 className="titulo">Seguros Particulares Fidelidade</h1>
+          <div className="simulador-grid">
+            {segurosParticulares.map((seguro, i) => (
+              <div className="simulador-card" key={i}>
+                <div className="card-img-container">
+                  <img src={seguro.imagem} alt={seguro.titulo} className="imagem" />
+                  <button
+                    className="hover-button"
+                    onClick={() => SaberMais(seguro)}
+                  >
+                    Saber Mais
+                  </button>
+                </div>
+                <h3>{seguro.titulo}</h3>
               </div>
-              <h3>{seguro.titulo}</h3>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </IonContent>
       <Footer />

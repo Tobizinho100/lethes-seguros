@@ -1,5 +1,3 @@
-/* === Vídeo Principal === */
-
 .video-container {
   position: relative;
   width: 100%;
@@ -36,11 +34,9 @@
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
 
 .video-subtitle {
-  color: #f9f9f9;
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
   opacity: 0.9;
@@ -60,16 +56,63 @@
   --background: #bf0510;
 }
 
-/* === Responsivo Vídeo === */
+/* === Swiper / Cards de Seguros === */
+.seguros-swiper {
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.seguro-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.seguro-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  z-index: 10;
+}
+
+
+.seguro-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+.seguro-card h4 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.seguro-card p {
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  flex-grow: 1;
+}
+
+
+/* Garante que o Swiper não bloqueia os cliques */
+.swiper-slide * {
+  pointer-events: auto;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   .video-container {
     height: 45vh;
-  }
-
-  .video-overlay {
-    top: 70%;
-    padding: 1rem;
-    border-radius: 12px;
   }
 
   .video-title {
@@ -79,89 +122,5 @@
   .video-subtitle {
     font-size: 0.95rem;
   }
-}
 
-/* === Swiper / Cards de Seguros === */
-
-.seguros-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 1rem;
-  background-color: #f9f9f9;
-}
-
-.seguro-card {
-  padding-top: 20px;
-  position: relative;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.seguro-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.seguro-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: filter 0.3s ease;
-}
-
-.seguro-card:hover img {
-  filter: brightness(45%);
-}
-
-.seguro-card .hover-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #e30613;
-  color: white;
-  font-weight: bold;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1;
-}
-
-.seguro-card:hover .hover-button {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-/* === Responsivo Swiper === */
-
-@media (max-width: 768px) {
-  .seguros-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .seguro-card {
-    max-width: 220px;
-    border-radius: 12px;
-  }
-
-  .seguro-card h4 {
-    font-size: 1rem;
-  }
-
-  .seguro-card p {
-    font-size: 0.85rem;
-    margin: 0.5rem 0.75rem 1rem;
-  }
-
-  .seguro-card img {
-    aspect-ratio: 3 / 3;
-  }
 }

@@ -78,12 +78,11 @@ const seguros = [
   },
 ];
 
-
 const Home: React.FC = () => {
   const history = useHistory();
 
   const Simulador = useCallback(() => {
-    history.push('./Simulador');
+    history.push('/simulador');
   }, [history]);
 
   return (
@@ -106,24 +105,22 @@ const Home: React.FC = () => {
         </div>
         
         <section className="seguros-swiper">
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={2}
-          breakpoints={{
-            640: { slidesPerView: 2.2, spaceBetween: 16 },
-            768: { slidesPerView: 3.2, spaceBetween: 20 },
-            1024: { slidesPerView: 4.2, spaceBetween: 24 },
-          }}
-        >
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={2}
+            loop={true}
+            breakpoints={{
+              640: { slidesPerView: 2.2, spaceBetween: 16 },
+              768: { slidesPerView: 3.2, spaceBetween: 20 },
+              1024: { slidesPerView: 4.2, spaceBetween: 24 },
+            }}
+          >
             {seguros.map((seguro, index) => (
               <SwiperSlide key={index}>
                 <div className="seguro-card">
                   <img src={seguro.imagem} alt={seguro.alt} />
                   <h4>{seguro.titulo}</h4>
                   <p>{seguro.descricao}</p>
-                  <button className="hover-button" onClick={Simulador}>
-                    Simular
-                  </button>
                 </div>
               </SwiperSlide>
             ))}
