@@ -1,9 +1,6 @@
 import {
   IonPage,
   IonContent,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonButton,
   IonInput,
   IonItem,
@@ -13,66 +10,76 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './SimuladorTipo.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SimuladorTipo: React.FC = () => {
   const { tipo } = useParams<{ tipo: string }>();
 
-  // Estado para armazenar os valores dos campos
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [idade, setIdade] = useState('');
-  const [resultado, setResultado] = useState<string | null>(null); // Resultado da simulação
+  const [resultado, setResultado] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  // Função para definir o título conforme o tipo de seguro
   const getTituloSeguro = (tipo: string | undefined) => {
-    if (!tipo) {
-      return 'Simulação de Seguro - Tipo não especificado';
-    }
-
+    if (!tipo) return 'Simulação de Seguro - Tipo não especificado';
     switch (tipo) {
-      case 'vida':
-        return 'Simulação de Seguro de Vida';
-      case 'automovel':
-        return 'Simulação de Seguro Automóvel';
-      case 'saude':
-        return 'Simulação de Seguro de Saúde';
-      case 'casa':
-        return 'Simulação de Seguro Habitação';
-      case 'pets':
-        return 'Simulação de Seguro Pets';
-      default:
-        return 'Simulação de Seguro';
+      case 'vida': return 'Simulação de Seguro de Vida';
+      case 'automovel': return 'Simulação de Seguro Automóvel';
+      case 'saude': return 'Simulação de Seguro de Saúde';
+      case 'casa': return 'Simulação de Seguro Habitação';
+      case 'pets': return 'Simulação de Seguro Pets';
+      default: return 'Simulação de Seguro';
     }
   };
 
-  // Função para calcular e mostrar o resultado
-  const handleSimulacao = () => {
-    // Validação básica
+  const handleSimulacao = (e: React.FormEvent) => {
+    e.preventDefault();
+
     if (!nome || !email || !idade) {
-      setResultado('Por favor, preencha todos os campos.');
+      toast.error('Por favor, preencha todos os campos.');
       return;
     }
 
-    // Exemplo de lógica de cálculo da simulação, dependendo do tipo de seguro
     let valorSimulacao = 0;
-
     switch (tipo) {
       case 'vida':
-        valorSimulacao = 100 + parseInt(idade) * 2; // Exemplo de cálculo fictício
+        valorSimulacao = 100 + parseInt(idade) * 2;
         break;
       case 'automovel':
-        valorSimulacao = 150 + parseInt(idade) * 1.5; // Exemplo de cálculo fictício
+        valorSimulacao = 150 + parseInt(idade) * 1.5;
         break;
       case 'casa':
-        valorSimulacao = 200 + parseInt(idade) * 1.2; // Exemplo de cálculo fictício
+        valorSimulacao = 200 + parseInt(idade) * 1.2;
         break;
       default:
-        valorSimulacao = 100; // Valor padrão
+        valorSimulacao = 100;
     }
 
-    // Exibindo o resultado
-    setResultado(`O valor da sua simulação é: €${valorSimulacao}`);
+    const resultadoTexto = `O valor da sua simulação é: €${valorSimulacao}`;
+    setResultado(resultadoTexto);
+
+    const templateParams = {
+      nome,
+      email,
+      idade,
+      tipo,
+      resultado: `€${valorSimulacao}`,
+      data: new Date().toLocaleString('pt-PT'),
+    };
+
+    emailjs
+      .send('service_l0qraj9', 'template_simulador', templateParams, 'IeKFH4HHEKDxKkwiy')
+      .then(() => {
+        toast.success('Simulação enviada com sucesso!');
+      })
+      .catch((error) => {
+        toast.error('Erro ao enviar a simulação.');
+        console.error(error);
+      });
   };
 
   return (
@@ -81,38 +88,22 @@ const SimuladorTipo: React.FC = () => {
       <IonContent className="ion-padding">
         <h2 className="titulo-simulacao">{getTituloSeguro(tipo)}</h2>
 
-        <form className="form-simulacao">
-          {/* Campos principais */}
+        <form className="form-simulacao" ref={formRef} onSubmit={handleSimulacao}>
           <IonItem className="input-item">
             <IonLabel position="floating">Nome</IonLabel>
-            <IonInput 
-              value={nome} 
-              onIonChange={(e) => setNome(e.detail.value!)} 
-              required 
-            />
+            <IonInput value={nome} onIonChange={(e) => setNome(e.detail.value!)} required />
           </IonItem>
 
           <IonItem className="input-item">
             <IonLabel position="floating">Email</IonLabel>
-            <IonInput 
-              type="email" 
-              value={email} 
-              onIonChange={(e) => setEmail(e.detail.value!)} 
-              required 
-            />
+            <IonInput type="email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} required />
           </IonItem>
 
           <IonItem className="input-item">
             <IonLabel position="floating">Idade</IonLabel>
-            <IonInput 
-              type="number" 
-              value={idade} 
-              onIonChange={(e) => setIdade(e.detail.value!)} 
-              required 
-            />
+            <IonInput type="number" value={idade} onIonChange={(e) => setIdade(e.detail.value!)} required />
           </IonItem>
 
-          {/* Campos específicos por tipo de seguro */}
           {tipo === 'automovel' && (
             <>
               <IonItem className="input-item">
@@ -133,16 +124,15 @@ const SimuladorTipo: React.FC = () => {
             </IonItem>
           )}
 
-          {/* Botão de simular */}
           <div className="btn-simular-wrapper">
-            <IonButton expand="block" color="primary" onClick={handleSimulacao}>
+            <IonButton expand="block" color="primary" type="submit">
               Simular
             </IonButton>
           </div>
         </form>
 
-        {/* Exibir o resultado da simulação */}
         {resultado && <div className="resultado-simulacao">{resultado}</div>}
+        <ToastContainer />
       </IonContent>
       <Footer />
     </IonPage>

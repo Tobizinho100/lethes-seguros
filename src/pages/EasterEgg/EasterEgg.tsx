@@ -98,7 +98,7 @@ const EasterEgg: React.FC = () => {
                 <IonCardHeader>
                   <IonCardTitle>
                     <img src={illustratorLogo} alt="Illustrator" className="tech-logo" />
-                    Illustrator & Blender
+                    Adobe Illustrator & Blender
                     <img src={blenderLogo} alt="Blender" className="tech-logo" />
                   </IonCardTitle>
                 </IonCardHeader>
@@ -109,8 +109,9 @@ const EasterEgg: React.FC = () => {
             </IonCol>
           </IonRow>
         </IonGrid>
+        <MeuFooter />
       </IonContent>
-    <MeuFooter />
+    
     </IonPage>
   );
 };

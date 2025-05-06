@@ -1,55 +1,111 @@
+/* Estilo geral da página */
+html, body {
+  height: 100%; /* Garante que o body ocupe 100% da altura */
+  margin: 0;
+}
+
+/* Container principal */
+.ion-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o conteúdo ocupe a altura total da tela */
+}
+
+/* Conteúdo principal */
 .competencias-content {
-    background: #f7f7f7;
-    min-height: 100vh;
-  }
-  
+  background: #f7f7f7;
+  flex: 1; /* Permite que o conteúdo ocupe todo o espaço disponível */
+  padding-bottom: 80px; /* Espaço para o footer */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  padding-top: 20px; /* Espaço no topo */
+}
+
+/* Título das competências */
+.competencias-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1rem;
+  color: #e30613;
+}
+
+/* Subtítulo das competências */
+.competencias-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0.5rem auto 2rem auto;
+  max-width: 800px;
+  color: #444;
+}
+
+/* Estilo dos cartões */
+.competencias-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+  margin-bottom: 20px;
+}
+
+/* Efeito de hover nos cartões */
+.competencias-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Título dos cartões */
+.ion-card-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adiciona espaçamento ao redor das imagens de logotipos */
+.ion-card-title img {
+  margin-right: 8px;
+}
+
+/* Estilo das imagens dos logos */
+.tech-logo {
+  width: auto;
+  height: 24px;
+  vertical-align: middle;
+}
+
+/* Responsividade para tamanhos menores de tela */
+@media (max-width: 768px) {
   .competencias-title {
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 1rem;
-    color: #e30613;
+    font-size: 1.8rem;
   }
-  
+
   .competencias-subtitle {
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 0.5rem auto 2rem auto;
-    max-width: 800px;
-    color: #444;
-  }
-  
-  .competencias-card {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 16px;
-    transition: transform 0.2s ease;
-  }
-  
-  .competencias-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .ion-card-title {
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: #333;
-  }
-  
-  .ion-card-content ul {
-    padding-left: 1.2rem;
-    margin-top: 0.5rem;
-    color: #555;
     font-size: 1rem;
   }
-  
-  .ion-card-content li {
-    margin-bottom: 0.5rem;
+
+  .ion-col {
+    padding-left: 0;
+    padding-right: 0;
   }
-  
-  .tech-logo {
-    width: auto;
-    height: 24px;
-    margin-right: 6px;
-    vertical-align: middle;
+
+  .ion-grid {
+    padding-left: 0;
+    padding-right: 0;
   }
-  
+
+  .competencias-card {
+    margin-bottom: 15px;
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .competencias-card {
+    margin-bottom: 20px;
+  }
+
+  .ion-card-title {
+    font-size: 1.2rem;
+  }
+}

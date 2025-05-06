@@ -1,66 +1,91 @@
-/* Título da Simulação */
-.titulo-simulacao {
-  font-size: 24px;
-  color: #e30613;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+/* Estilo geral da página */
+.ion-content {
+  background-color: #ffffff;
+  padding-bottom: 80px; /* Ajuste do padding para dar mais espaço no fundo */
 }
 
-/* Estilo do formulário de simulação */
+/* Título da Simulação */
+.titulo-simulacao {
+  font-size: 28px;
+  color: #e30613;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* Formulário de simulação */
 .form-simulacao {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 70px; /* Aumento do espaçamento entre os itens do formulário */
   max-width: 600px;
-  margin: 0 auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 0 auto 40px;
 }
 
-/* Estilo dos campos de input */
+/* Estilo dos campos */
 .input-item {
-  margin-bottom: 20px;
+  --highlight-color-focused: #e30613;
 }
 
-/* Estilo para o botão de simulação */
+/* Aumentar padding e tornar os campos mais confortáveis */
+.ion-input,
+.ion-textarea {
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  padding: 15px; /* Aumento do padding para mais espaço interno */
+  margin-bottom: 15px; /* Ajuste da margem inferior para dar mais espaço entre os campos */
+  width: 100%; /* Garantir que o campo ocupe a largura completa disponível */
+  box-sizing: border-box; /* Garantir que o padding não afete a largura total */
+}
+
+/* Alinhamento e espaço para os labels */
+.ion-label {
+  font-size: 16px;
+  margin-bottom: 8px; /* Espaçamento entre o label e o campo de input */
+}
+
+/* Botão de simular */
 .btn-simular-wrapper {
+  text-align: center;
   margin-top: 20px;
 }
 
-/* Estilo para o botão de simular */
 .ion-button {
-  border-radius: 8px;
-  padding: 12px;
   background-color: #e30613;
+  color: white;
+  padding: 12px 24px;
+  font-weight: 600;
   font-size: 16px;
-  font-weight: bold;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
-/* Hover no botão */
 .ion-button:hover {
   background-color: #c40411;
 }
 
-/* Melhorando a aparência dos campos */
-.ion-input, .ion-textarea {
-  font-size: 16px;
-  padding: 10px;
+/* Resultado da simulação */
+.resultado-simulacao {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  background: #fff4f4;
+  border-left: 6px solid #e30613;
+  padding: 12px 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
 }
 
-/* Focando em um campo de input */
-.ion-input:focus, .ion-textarea:focus {
-  border-color: #e30613;
-  box-shadow: 0 0 5px rgba(227, 6, 19, 0.3);
-}
-
-.ion-label {
-  font-size: 16px;
-}
-
-/* Estilo para os campos específicos por tipo de seguro */
+/* Remover setas do input number */
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
