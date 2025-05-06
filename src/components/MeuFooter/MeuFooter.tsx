@@ -69,14 +69,10 @@ import './MeuFooter.css';
           </div>
         </div>
 
-        <div className="footer-section">
-          <h4>Localização</h4>
-          <p><IonIcon icon={locationOutline} />  Rua Agostinho José Taveira, 52 , 4990-072 Ponte de Lima</p>
-        </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Lethes Seguro. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Duarte Menezes. Todos os direitos reservados.</p>
         <button className="duarte" onClick={Home}>Feito por Duarte Nuno Pona Menezes.</button>
       </div>
     </footer>

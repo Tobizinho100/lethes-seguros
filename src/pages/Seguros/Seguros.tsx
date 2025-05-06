@@ -57,8 +57,9 @@ const Seguros: React.FC = () => {
             ))}
           </div>
         </div>
+        <Footer />
       </IonContent>
-      <Footer />
+      
     </IonPage>
   );
 };
