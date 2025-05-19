@@ -30,9 +30,9 @@ const segurosParticulares = [
 const Seguros: React.FC = () => {
   const history = useHistory();
 
-  const SaberMais = (seguro: { titulo: string, imagem: string }) => {
-    history.push('/sabermais', { state: seguro });
-  };
+  const SaberMais = (seguro: { titulo: string }) => {
+  history.push('/sabermais', { titulo: seguro.titulo });
+};
 
   return (
     <IonPage>
@@ -57,9 +57,8 @@ const Seguros: React.FC = () => {
             ))}
           </div>
         </div>
-        <Footer />
       </IonContent>
-      
+      <Footer />
     </IonPage>
   );
 };
