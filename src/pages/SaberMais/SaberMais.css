@@ -1,39 +1,108 @@
+.sabermais-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.sabermais-wrapper h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #e30613;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
 .sabermais-conteudo {
-    padding: 2rem 1rem;
-    max-width: 800px;
-    margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.sabermais-imagem {
+  flex: 0 0 400px;
+}
+
+.seguro-imagem {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seguro-imagem:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.sabermais-detalhes {
+  flex: 1;
+  min-width: 280px;
+}
+
+.sabermais-detalhes p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.sabermais-detalhes h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+.sabermais-detalhes ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.8rem;
+}
+
+.sabermais-detalhes ul li {
+  background-color: #f4f4f4;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  font-size: 0.95rem;
+}
+
+.btn-simular {
+  --background: #e30613;
+  --color: white;
+  --border-radius: 8px;
+  font-weight: bold;
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(227, 6, 19, 0.25);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-simular:hover {
+  --background: #bf0510;
+  transform: translateY(-2px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sabermais-conteudo {
     text-align: center;
   }
-  
-  .sabermais-conteudo h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+
+  .sabermais-imagem {
+    margin: 0 auto;
+    max-width: 60%;
   }
-  
-  .seguro-imagem {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 16px;
-    margin: 1rem auto;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  .sabermais-detalhes {
+    text-align: center;
   }
-  
-  .sabermais-conteudo p {
-    font-size: 1.1rem;
-    margin: 1.5rem 0;
+
+  .sabermais-detalhes ul li {
+    text-align: left;
+
   }
-  
-  .btn-simular {
-    --background: #e30613;
-    --color: white;
-    --border-radius: 8px;
-    font-weight: bold;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-simular:hover {
-    --background: #bf0510;
-  }
-  
+}
