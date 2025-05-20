@@ -86,6 +86,27 @@
   transform: translateY(-2px);
 }
 
+.botao-voltar {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 20;
+  background-color: #dc2626; /* vermelho */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.botao-voltar:hover {
+  background-color: #b91c1c;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   .sabermais-conteudo {

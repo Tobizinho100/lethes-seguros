@@ -14,6 +14,7 @@ import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useLocation, useHistory } from 'react-router-dom';
 
 const SimuladorTipo: React.FC = () => {
   const { tipo } = useParams<{ tipo: string }>();
@@ -82,60 +83,75 @@ const SimuladorTipo: React.FC = () => {
       });
   };
 
+      const location = useLocation();
+      const history = useHistory();
+
   return (
     <IonPage>
-      <Header />
-      <IonContent className="ion-padding">
-        <h2 className="titulo-simulacao">{getTituloSeguro(tipo)}</h2>
+  <Header />
+  <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <IonContent className="ion-padding" style={{ flex: '1 0 auto' }}>
+      <IonButton
+        onClick={() => history.goBack()}
+        className="fixed top-4 left-4 z-20 !bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center gap-2 shadow-lg transition-all duration-200"
+      >
+        <span className="text-xl">&#8592;</span> Voltar
+      </IonButton>
 
-        <form className="form-simulacao" ref={formRef} onSubmit={handleSimulacao}>
-          <IonItem className="input-item">
-            <IonLabel position="floating">Nome</IonLabel>
-            <IonInput value={nome} onIonChange={(e) => setNome(e.detail.value!)} required />
-          </IonItem>
+      <h2 className="titulo-simulacao">{getTituloSeguro(tipo)}</h2>
 
-          <IonItem className="input-item">
-            <IonLabel position="floating">Email</IonLabel>
-            <IonInput type="email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} required />
-          </IonItem>
+      <form className="form-simulacao" ref={formRef} onSubmit={handleSimulacao}>
+        <IonItem className="input-item">
+          <IonLabel position="floating">Nome</IonLabel>
+          <IonInput value={nome} onIonChange={(e) => setNome(e.detail.value!)} required />
+        </IonItem>
 
-          <IonItem className="input-item">
-            <IonLabel position="floating">Idade</IonLabel>
-            <IonInput type="number" value={idade} onIonChange={(e) => setIdade(e.detail.value!)} required />
-          </IonItem>
+        <IonItem className="input-item">
+          <IonLabel position="floating">Email</IonLabel>
+          <IonInput type="email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} required />
+        </IonItem>
 
-          {tipo === 'automovel' && (
-            <>
-              <IonItem className="input-item">
-                <IonLabel position="floating">Marca do carro</IonLabel>
-                <IonInput required />
-              </IonItem>
-              <IonItem className="input-item">
-                <IonLabel position="floating">Ano de fabrico</IonLabel>
-                <IonInput type="number" required />
-              </IonItem>
-            </>
-          )}
+        <IonItem className="input-item">
+          <IonLabel position="floating">Idade</IonLabel>
+          <IonInput type="number" value={idade} onIonChange={(e) => setIdade(e.detail.value!)} required />
+        </IonItem>
 
-          {tipo === 'casa' && (
+        {tipo === 'automovel' && (
+          <>
             <IonItem className="input-item">
-              <IonLabel position="floating">Valor da casa (€)</IonLabel>
+              <IonLabel position="floating">Marca do carro</IonLabel>
+              <IonInput required />
+            </IonItem>
+            <IonItem className="input-item">
+              <IonLabel position="floating">Ano de fabrico</IonLabel>
               <IonInput type="number" required />
             </IonItem>
-          )}
+          </>
+        )}
 
-          <div className="btn-simular-wrapper">
-            <IonButton expand="block" color="primary" type="submit">
-              Simular
-            </IonButton>
-          </div>
-        </form>
+        {tipo === 'casa' && (
+          <IonItem className="input-item">
+            <IonLabel position="floating">Valor da casa (€)</IonLabel>
+            <IonInput type="number" required />
+          </IonItem>
+        )}
 
-        {resultado && <div className="resultado-simulacao">{resultado}</div>}
-        <ToastContainer />
-      </IonContent>
+        <div className="btn-simular-wrapper">
+          <IonButton expand="block" color="primary" type="submit">
+            Simular
+          </IonButton>
+        </div>
+      </form>
+
+      {resultado && <div className="resultado-simulacao">{resultado}</div>}
+      <ToastContainer />
       <Footer />
-    </IonPage>
+    </IonContent>
+
+    
+  </div>
+</IonPage>
+
   );
 };
 

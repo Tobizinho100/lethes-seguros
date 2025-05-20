@@ -1,9 +1,10 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'lethes-seguros',
+  appId: 'com.lethes.seguros',
+  appName: 'Seguros Lethes',
   webDir: 'dist'
 };
 
 export default config;
+
