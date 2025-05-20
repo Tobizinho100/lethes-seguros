@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Seguros Lethes</string>
+    <string name="title_activity_main">Seguros Lethes</string>
+    <string name="package_name">com.lethes.seguros</string>
+    <string name="custom_url_scheme">com.lethes.seguros</string>
+</resources>
