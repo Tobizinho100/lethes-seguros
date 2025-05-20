@@ -58,7 +58,15 @@ const SaberMais: React.FC = () => {
       <IonPage>
         <Header />
         <IonContent className="pagina">
+          
+          <button
+          onClick={() => history.goBack()}
+          className="fixed top-4 left-4 z-20 !bg-red-600 !hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center gap-2 shadow-lg transition-all duration-200"
+        >
+            <span className="text-xl">&#8592;</span> Voltar
+        </button>
           <div className="conteudo">
+
             <h2>Seguro não encontrado</h2>
             <IonButton onClick={() => history.push('/seguros')}>Voltar</IonButton>
           </div>
@@ -74,6 +82,12 @@ const SaberMais: React.FC = () => {
   <IonPage>
     <Header />
     <IonContent className="pagina">
+        <IonButton
+          onClick={() => history.goBack()}
+          className="fixed top-4 left-4 z-20 !bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full flex items-center gap-2 shadow-lg transition-all duration-200"
+        >
+            <span className="text-xl">&#8592;</span> Voltar
+        </IonButton>
       <div className="sabermais-wrapper">
         <h1>{seguroSelecionado.titulo}</h1>
         <div className="sabermais-conteudo">
@@ -98,8 +112,9 @@ const SaberMais: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </IonContent>
-    <Footer />
+    
   </IonPage>
 );
 
